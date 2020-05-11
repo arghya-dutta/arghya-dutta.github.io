@@ -44,7 +44,7 @@ module.exports = (env, argv) => ({
     ]),
     new HtmlWebPackPlugin({
       template: './src/index.html',
-      filename: './index.html',
+      filename: './src/index.html',
       chunks: ['vendor', 'app'],
       chunksSortMode: 'manual',
     }),
@@ -55,4 +55,9 @@ module.exports = (env, argv) => ({
       chunks: 'all',
     },
   },
+ output: {
+  filename:"bundle.min.js",
+  path:path.resolve(__dirname,'../dist'),
+ publicPath: "https://arghya-dutta.github.io/",
+ },
 });
